@@ -1,0 +1,11 @@
+{
+  "name": "sls-golang-lambda-provided.al2",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest",
+    "serverless": "latest",
+    "serverless-disable-functions": "latest",
+    "serverless-go-plugin": "latest",
+    "serverless-lambda-edge-pre-existing-cloudfront": "latest"
+  }
+}
