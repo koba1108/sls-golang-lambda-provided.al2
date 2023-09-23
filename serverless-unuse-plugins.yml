@@ -1,0 +1,23 @@
+service: sls-golang-lambda-provided-al2
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  timeout: 120
+  runtime: provided.al2
+
+package:
+  individually: true
+  patterns:
+    - '!./**'
+    - .bin/**
+
+functions:
+  hello-world:
+    handler: .bin/hello-world/bootstrap
+    url: true
+  hello-world2:
+    handler: .bin/hello-world2/bootstrap
+    url: true
