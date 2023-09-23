@@ -21,3 +21,6 @@ functions:
   hello-world:
     handler: ./src/hello-world
     url: true
+  hello-world2:
+    handler: ./src/hello-world2
+    url: true
