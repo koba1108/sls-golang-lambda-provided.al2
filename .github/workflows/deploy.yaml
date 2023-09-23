@@ -22,6 +22,6 @@ jobs:
         with:
           bun-version: latest
       - name: install serverless and plugins
-        run: bun install -g serverless serverless-go-plugin
-      - name: serverless deploy
-        run: sls deploy --verbose
+        run: bun install
+      # - name: serverless deploy
+      #   run: sls deploy --verbose
