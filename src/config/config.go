@@ -21,7 +21,9 @@ func LoadConfig() (*AppConfig, error) {
 
 func LoadConfigFromENV() (*AppConfig, error) {
 	var conf AppConfig
-	err := env.Parse(&conf)
+	err := env.ParseWithOptions(&conf, env.Options{
+		RequiredIfNoDef: true,
+	})
 	if err != nil {
 		return nil, err
 	}
