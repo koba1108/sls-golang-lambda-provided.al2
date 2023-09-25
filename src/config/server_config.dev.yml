@@ -1,0 +1,17 @@
+environment: dev
+service_admin_base_url: https://example.com/admin
+service_from_email: no-reply@example.com
+service_to_email: service@example.com
+jwt_issuer: https://cognito-idp.ap-northeast-1.amazonaws.com/ap-northeast-1_XXXXXXXXX
+sentry_dsn: https://ingest.sentry.io/XXXXXXXXX
+slack_webhook_url: https://hooks.slack.com/services/XXXXXXXXX/XXXXXXXXXXX/XXXXXXXXXXXXXXXXXX
+elastic_search_endpoint: https://ap-northeast-1.es.amazonaws.com/search-service
+elastic_search_aws_access_key_id: XXXXXXXXXXXXXXXXXXXX
+elastic_search_aws_secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+elastic_search_project_endpoint: https://ap-northeast-1.es.amazonaws.com/search-service2
+elastic_search_project_aws_access_key_id: XXXXXXXXXXXXXXXXXXXX2
+elastic_search_project_aws_secret_access_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX2
+cognito_admin_client_id: 1234567890123456789012345
+cognito_user_client_id: 2345678901234567890123451
+external_front_end_url: https://example.com/external
+v2_front_end_url: https://example.com/v2

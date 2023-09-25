@@ -31,3 +31,4 @@ functions:
   show-env:
     handler: ./src/show-env
     url: true
+    environment: ${file(./src/config/server_config.${self:provider.stage}.yml)}
