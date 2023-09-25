@@ -6,6 +6,7 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 	ginadapter "github.com/awslabs/aws-lambda-go-api-proxy/gin"
 	"github.com/gin-gonic/gin"
+	"github.com/koba1108/sls-golang-lambda-provided.al2/src/config"
 )
 
 var ginLambda *ginadapter.GinLambda
@@ -13,8 +14,15 @@ var ginLambda *ginadapter.GinLambda
 func init() {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
+		conf, err := config.LoadConfigFromENV()
+		if err != nil {
+			c.JSON(200, gin.H{
+				"error": err.Error(),
+			})
+			return
+		}
 		c.JSON(200, gin.H{
-			"hello": "world",
+			"hello": "world" + conf.AppEnv,
 		})
 	})
 	ginLambda = ginadapter.New(r)

@@ -1,9 +1,13 @@
 package config
 
-import "github.com/jinzhu/configor"
+import (
+	"github.com/caarlos0/env/v9"
+	"github.com/jinzhu/configor"
+)
 
 type AppConfig struct {
-	Env string `yaml:"env"`
+	AppEnv    string `env:"APP_ENV"`
+	NestedEnv string `env:"NESTED_NAME"`
 }
 
 func LoadConfig() (*AppConfig, error) {
@@ -13,4 +17,13 @@ func LoadConfig() (*AppConfig, error) {
 		return nil, err
 	}
 	return &cfg, nil
+}
+
+func LoadConfigFromENV() (*AppConfig, error) {
+	var conf AppConfig
+	err := env.Parse(&conf)
+	if err != nil {
+		return nil, err
+	}
+	return &conf, nil
 }

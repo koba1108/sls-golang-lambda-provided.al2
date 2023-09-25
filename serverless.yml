@@ -7,6 +7,8 @@ provider:
   region: ap-northeast-1
   timeout: 120
   runtime: provided.al2
+  stage: ${opt:stage, 'dev'}
+  environment: ${file(./src/config/config.${self:provider.stage}.yml)}
 
 plugins:
   - serverless-go-plugin
@@ -23,4 +25,9 @@ functions:
     url: true
   hello-world2:
     handler: ./src/hello-world2
+    url: true
+    environment:
+      APP_ENV: "dev2"
+  show-env:
+    handler: ./src/show-env
     url: true
