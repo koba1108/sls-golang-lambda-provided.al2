@@ -9,6 +9,7 @@
       "region": "ap-northeast-1",
       "timeout": 120,
       "runtime": "provided.al2",
+      "architecture": "arm64",
       "stage": "dev",
       "environment": {
         "APP_ENV": "dev",
@@ -191,13 +192,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sls-golang-lambda-provided-al2/dev/1695631436265-2023-09-25T08:43:56.265Z/hello-world.zip"
+                "S3Key": "serverless/sls-golang-lambda-provided-al2/dev/1695882794248-2023-09-28T06:33:14.248Z/hello-world.zip"
               },
               "Handler": ".bin/hello-world",
               "Runtime": "provided.al2",
               "FunctionName": "sls-golang-lambda-provided-al2-dev-hello-world",
               "MemorySize": 1024,
               "Timeout": 120,
+              "Architectures": [
+                "arm64"
+              ],
               "Environment": {
                 "Variables": {
                   "APP_ENV": "dev",
@@ -222,13 +226,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sls-golang-lambda-provided-al2/dev/1695631436265-2023-09-25T08:43:56.265Z/hello-world2.zip"
+                "S3Key": "serverless/sls-golang-lambda-provided-al2/dev/1695882794248-2023-09-28T06:33:14.248Z/hello-world2.zip"
               },
               "Handler": ".bin/hello-world2",
               "Runtime": "provided.al2",
               "FunctionName": "sls-golang-lambda-provided-al2-dev-hello-world2",
               "MemorySize": 1024,
               "Timeout": 120,
+              "Architectures": [
+                "arm64"
+              ],
               "Environment": {
                 "Variables": {
                   "APP_ENV": "dev2",
@@ -253,13 +260,16 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sls-golang-lambda-provided-al2/dev/1695631436265-2023-09-25T08:43:56.265Z/show-env.zip"
+                "S3Key": "serverless/sls-golang-lambda-provided-al2/dev/1695882794248-2023-09-28T06:33:14.248Z/show-env.zip"
               },
               "Handler": ".bin/show-env",
               "Runtime": "provided.al2",
               "FunctionName": "sls-golang-lambda-provided-al2-dev-show-env",
               "MemorySize": 1024,
               "Timeout": 120,
+              "Architectures": [
+                "arm64"
+              ],
               "Environment": {
                 "Variables": {
                   "APP_ENV": "dev",
@@ -294,47 +304,14 @@
               "ShowDashenvLogGroup"
             ]
           },
-          "HelloDashworld2LambdaVersionOqaazUhYgk6W13KhMRjNEM18ZyHxVEdV7aryjUieNI": {
-            "Type": "AWS::Lambda::Version",
-            "DeletionPolicy": "Retain",
-            "Properties": {
-              "FunctionName": {
-                "Ref": "HelloDashworld2LambdaFunction"
-              },
-              "CodeSha256": "ryU+gWq+RZULGcQhhyMnBizEzglLphLBQZpG5t+Rvfo="
-            }
-          },
-          "HelloDashworld2LambdaFunctionUrl": {
-            "Type": "AWS::Lambda::Url",
-            "Properties": {
-              "AuthType": "NONE",
-              "TargetFunctionArn": {
-                "Fn::GetAtt": [
-                  "HelloDashworld2LambdaFunction",
-                  "Arn"
-                ]
-              }
-            }
-          },
-          "HelloDashworld2LambdaPermissionFnUrl": {
-            "Type": "AWS::Lambda::Permission",
-            "Properties": {
-              "FunctionName": {
-                "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"HelloDashworld2LambdaFunctionUrl\"][\"Properties\"][\"TargetFunctionArn\"]"
-              },
-              "Action": "lambda:InvokeFunctionUrl",
-              "Principal": "*",
-              "FunctionUrlAuthType": "NONE"
-            }
-          },
-          "HelloDashworldLambdaVersion224sNynPQsrD9CUXNdzOkKAhouZwBFGPEIUKua98vhs": {
+          "HelloDashworldLambdaVersionyH633GZUeOw4rvRDK3sAjgAecLwITSSz3NF6y6hoh0g": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "HelloDashworldLambdaFunction"
               },
-              "CodeSha256": "c5o3HmIaUdFEWKWX5BjlJLIrkKf0LuY/kixN7XFzqmo="
+              "CodeSha256": "Pf5EX+cGqHVxqQFEXMbylT+Dx6TU7lEf1Yb323SRdOw="
             }
           },
           "HelloDashworldLambdaFunctionUrl": {
@@ -360,14 +337,14 @@
               "FunctionUrlAuthType": "NONE"
             }
           },
-          "ShowDashenvLambdaVersionJR8O4wpBoNz80uJ7C4HptUV9tztL1eiDyJUx59ykc": {
+          "ShowDashenvLambdaVersiongOZ3LtxCanDtsM5lONOFP3OmaE0nOYnmRsZ7Hvzzn8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ShowDashenvLambdaFunction"
               },
-              "CodeSha256": "XjCccsXHW+OXLx536cg6xlAlMoyIHAT0G4yA648DbNI="
+              "CodeSha256": "ZcI4zUHLdoCt9COCOerm2GsSK/nIxaRE14gHF2p431w="
             }
           },
           "ShowDashenvLambdaFunctionUrl": {
@@ -392,6 +369,39 @@
               "Principal": "*",
               "FunctionUrlAuthType": "NONE"
             }
+          },
+          "HelloDashworld2LambdaVersionj4H3vzBCti1tJx9xuZNxPJ8WyWyo59M3ZTbmRKSNQ": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "HelloDashworld2LambdaFunction"
+              },
+              "CodeSha256": "ILT6rGiaQ4AteuNtVyME35lWT64PVFMViW7TAldSX28="
+            }
+          },
+          "HelloDashworld2LambdaFunctionUrl": {
+            "Type": "AWS::Lambda::Url",
+            "Properties": {
+              "AuthType": "NONE",
+              "TargetFunctionArn": {
+                "Fn::GetAtt": [
+                  "HelloDashworld2LambdaFunction",
+                  "Arn"
+                ]
+              }
+            }
+          },
+          "HelloDashworld2LambdaPermissionFnUrl": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"HelloDashworld2LambdaFunctionUrl\"][\"Properties\"][\"TargetFunctionArn\"]"
+              },
+              "Action": "lambda:InvokeFunctionUrl",
+              "Principal": "*",
+              "FunctionUrlAuthType": "NONE"
+            }
           }
         },
         "Outputs": {
@@ -403,31 +413,10 @@
               "Name": "sls-sls-golang-lambda-provided-al2-dev-ServerlessDeploymentBucketName"
             }
           },
-          "HelloDashworld2LambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Ref": "HelloDashworld2LambdaVersionOqaazUhYgk6W13KhMRjNEM18ZyHxVEdV7aryjUieNI"
-            },
-            "Export": {
-              "Name": "sls-sls-golang-lambda-provided-al2-dev-HelloDashworld2LambdaFunctionQualifiedArn"
-            }
-          },
-          "HelloDashworld2LambdaFunctionUrl": {
-            "Description": "Lambda Function URL",
-            "Value": {
-              "Fn::GetAtt": [
-                "HelloDashworld2LambdaFunctionUrl",
-                "FunctionUrl"
-              ]
-            },
-            "Export": {
-              "Name": "sls-sls-golang-lambda-provided-al2-dev-HelloDashworld2LambdaFunctionUrl"
-            }
-          },
           "HelloDashworldLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "HelloDashworldLambdaVersion224sNynPQsrD9CUXNdzOkKAhouZwBFGPEIUKua98vhs"
+              "Ref": "HelloDashworldLambdaVersionyH633GZUeOw4rvRDK3sAjgAecLwITSSz3NF6y6hoh0g"
             },
             "Export": {
               "Name": "sls-sls-golang-lambda-provided-al2-dev-HelloDashworldLambdaFunctionQualifiedArn"
@@ -448,7 +437,7 @@
           "ShowDashenvLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ShowDashenvLambdaVersionJR8O4wpBoNz80uJ7C4HptUV9tztL1eiDyJUx59ykc"
+              "Ref": "ShowDashenvLambdaVersiongOZ3LtxCanDtsM5lONOFP3OmaE0nOYnmRsZ7Hvzzn8"
             },
             "Export": {
               "Name": "sls-sls-golang-lambda-provided-al2-dev-ShowDashenvLambdaFunctionQualifiedArn"
@@ -464,6 +453,27 @@
             },
             "Export": {
               "Name": "sls-sls-golang-lambda-provided-al2-dev-ShowDashenvLambdaFunctionUrl"
+            }
+          },
+          "HelloDashworld2LambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "HelloDashworld2LambdaVersionj4H3vzBCti1tJx9xuZNxPJ8WyWyo59M3ZTbmRKSNQ"
+            },
+            "Export": {
+              "Name": "sls-sls-golang-lambda-provided-al2-dev-HelloDashworld2LambdaFunctionQualifiedArn"
+            }
+          },
+          "HelloDashworld2LambdaFunctionUrl": {
+            "Description": "Lambda Function URL",
+            "Value": {
+              "Fn::GetAtt": [
+                "HelloDashworld2LambdaFunctionUrl",
+                "FunctionUrl"
+              ]
+            },
+            "Export": {
+              "Name": "sls-sls-golang-lambda-provided-al2-dev-HelloDashworld2LambdaFunctionUrl"
             }
           }
         }
@@ -554,7 +564,7 @@
     },
     "custom": {
       "go": {
-        "cmd": "GOARCH=amd64 GOOS=linux go build -ldflags=\"-s -w\"",
+        "cmd": "GOARCH=arm64 GOOS=linux go build -ldflags=\"-s -w\"",
         "supportedRuntimes": [
           "provided.al2"
         ],
@@ -579,7 +589,7 @@
         "timeout": 120,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "HelloDashworldLambdaVersion224sNynPQsrD9CUXNdzOkKAhouZwBFGPEIUKua98vhs"
+        "versionLogicalId": "HelloDashworldLambdaVersionyH633GZUeOw4rvRDK3sAjgAecLwITSSz3NF6y6hoh0g"
       },
       "hello-world2": {
         "handler": ".bin/hello-world2",
@@ -597,7 +607,7 @@
         "timeout": 120,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "HelloDashworld2LambdaVersionOqaazUhYgk6W13KhMRjNEM18ZyHxVEdV7aryjUieNI"
+        "versionLogicalId": "HelloDashworld2LambdaVersionj4H3vzBCti1tJx9xuZNxPJ8WyWyo59M3ZTbmRKSNQ"
       },
       "show-env": {
         "handler": ".bin/show-env",
@@ -631,7 +641,7 @@
         "timeout": 120,
         "runtime": "provided.al2",
         "vpc": {},
-        "versionLogicalId": "ShowDashenvLambdaVersionJR8O4wpBoNz80uJ7C4HptUV9tztL1eiDyJUx59ykc"
+        "versionLogicalId": "ShowDashenvLambdaVersiongOZ3LtxCanDtsM5lONOFP3OmaE0nOYnmRsZ7Hvzzn8"
       }
     },
     "configValidationMode": "warn",
@@ -656,7 +666,7 @@
     "isDashboardMonitoringPreconfigured": false
   },
   "package": {
-    "artifactDirectoryName": "serverless/sls-golang-lambda-provided-al2/dev/1695631436265-2023-09-25T08:43:56.265Z",
+    "artifactDirectoryName": "serverless/sls-golang-lambda-provided-al2/dev/1695882794248-2023-09-28T06:33:14.248Z",
     "artifact": ""
   }
 }
